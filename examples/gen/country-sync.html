@@ -58,7 +58,7 @@ for (var i = 0; i &lt; countryData.length; i++) {
   var country = countryData[i];
   var optionNode = document.createElement(&quot;option&quot;);
   optionNode.value = country.iso2;
-  var textNode = document.createTextNode(country.name);
+  var textNode = document.createTextNode(country.russianName);
   optionNode.appendChild(textNode);
   addressDropdown.appendChild(optionNode);
 }

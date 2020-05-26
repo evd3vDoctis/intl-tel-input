@@ -13,7 +13,7 @@ for (var i = 0; i < countryData.length; i++) {
   var country = countryData[i];
   var optionNode = document.createElement("option");
   optionNode.value = country.iso2;
-  var textNode = document.createTextNode(country.name);
+  var textNode = document.createTextNode(country.russianName);
   optionNode.appendChild(textNode);
   addressDropdown.appendChild(optionNode);
 }

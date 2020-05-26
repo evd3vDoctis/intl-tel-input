@@ -3,7 +3,7 @@ var countryData = window.intlTelInputGlobals.getCountryData(),
 
 for (var i = 0; i < countryData.length; i++) {
   var country = countryData[i];
-  country.name = country.name.replace(/.+\((.+)\)/,"$1");
+  country.name = country.russianName.replace(/.+\((.+)\)/,"$1");
 }
 
 window.intlTelInput(input, {

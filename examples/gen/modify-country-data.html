@@ -34,7 +34,7 @@
 
 for (var i = 0; i &lt; countryData.length; i++) {
   var country = countryData[i];
-  country.name = country.name.replace(/.+\((.+)\)/,&quot;$1&quot;);
+  country.name = country.russianName.replace(/.+\((.+)\)/,&quot;$1&quot;);
 }
 
 window.intlTelInput(input, {
