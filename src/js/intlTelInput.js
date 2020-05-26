@@ -237,14 +237,14 @@ class Iti {
     for (let i = 0; i < this.countries.length; i++) {
       const iso = this.countries[i].iso2.toLowerCase();
       if (this.options.localizedCountries.hasOwnProperty(iso)) {
-        this.countries[i].name = this.options.localizedCountries[iso];
+        this.countries[i].russianName = this.options.localizedCountries[iso];
       }
     }
   }
 
   // sort by country name
   _countryNameSort(a, b) {
-    return a.name.localeCompare(b.name);
+    return a.russianName.localeCompare(b.russianName);
   }
 
 
@@ -349,6 +349,16 @@ class Iti {
       this.selectedFlag.setAttribute('tabindex', '0');
       this.dropdownArrow = this._createEl('div', { class: 'iti__arrow' }, this.selectedFlag);
 
+      const codeLabel = this._createEl('label', { class: 'iti__code-label' }, this.flagsContainer);
+      setTimeout(() => {
+        codeLabel.innerText = '+' + this.selectedCountryData.dialCode;
+      });
+
+      const country = this._createEl('div', { class: 'iti__country' }, this.selectedFlag);
+      setTimeout(() => {
+        country.innerText = this.selectedCountryData.russianName;
+      });
+
       // country dropdown: preferred countries, then divider, then all countries
       this.countryList = this._createEl('ul', {
         class: 'iti__country-list iti__hide',
@@ -406,7 +416,7 @@ class Iti {
       // add the flag
       tmp += `<div class='iti__flag-box'><div class='iti__flag iti__${c.iso2}'></div></div>`;
       // and the country name and dial code
-      tmp += `<span class='iti__country-name'>${c.name}</span>`;
+      tmp += `<span class='iti__country-name'>${c.russianName}</span>`;
       tmp += `<span class='iti__dial-code'>+${c.dialCode}</span>`;
       // close the list item
       tmp += '</li>';
@@ -813,7 +823,7 @@ class Iti {
   // find the first list item whose name starts with the query string
   _searchForCountry(query) {
     for (let i = 0; i < this.countries.length; i++) {
-      if (this._startsWith(this.countries[i].name, query)) {
+      if (this._startsWith(this.countries[i].russianName, query)) {
         const listItem = this.countryList.querySelector(`#iti-${this.id}__item-${this.countries[i].iso2}`);
         // update highlighting and scroll
         this._highlightListItem(listItem, false);
@@ -966,8 +976,15 @@ class Iti {
 
     this.selectedFlagInner.setAttribute('class', `iti__flag iti__${countryCode}`);
     // update the selected country's title attribute
-    const title = (countryCode) ? `${this.selectedCountryData.name}: +${this.selectedCountryData.dialCode}` : 'Unknown';
+    const title = (countryCode) ? `${this.selectedCountryData.russianName}: +${this.selectedCountryData.dialCode}` : 'Unknown';
     this.selectedFlag.setAttribute('title', title);
+
+    const countryName = this.selectedFlag.querySelector('.iti__country');
+    countryName.innerText = this.selectedCountryData.russianName;
+
+    const codeLabel = document.querySelector('.iti label');
+    codeLabel.innerText = '+' + this.selectedCountryData.dialCode;
+
 
     if (this.options.separateDialCode) {
       const dialCode = (this.selectedCountryData.dialCode) ? `+${this.selectedCountryData.dialCode}` : '';

@@ -38,8 +38,10 @@ $mobilePopupMargin: 30px !default;
   // absolutely positioned over the input
   position: relative;
   // keep the input's default inline properties
-  display: inline-block;
+  //display: inline-block;
 
+  display: flex;
+  flex-direction: column;
   // paul irish says this is ok
   // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
   * {
@@ -205,6 +207,13 @@ $mobilePopupMargin: 30px !default;
     .iti__flag-container {
       right: auto;
       left: 0;
+      display: flex;
+      position: static;
+      flex-direction: column;
+      .iti__selected-flag {
+        width: 100%;
+        height: 35px;
+      }
     }
   }
 

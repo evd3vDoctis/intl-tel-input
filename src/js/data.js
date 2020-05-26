@@ -197,6 +197,7 @@ var allCountries = [
     "55"
   ],
   [
+    "Британская территория в Индийском океане",
     "British Indian Ocean Territory",
     "io",
     "246"
