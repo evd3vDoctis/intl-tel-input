@@ -197,13 +197,13 @@ var allCountries = [
     "55"
   ],
   [
-    "Британская территория в Индийском океане",
+    "Британская территория (BIOT)",
     "British Indian Ocean Territory",
     "io",
     "246"
   ],
   [
-    "Британская территория в Индийском океане",
+    "Виргинские острова",
     "British Virgin Islands",
     "vg",
     "1",
@@ -277,7 +277,7 @@ var allCountries = [
     ["345"]
   ],
   [
-    "Центральноафриканская Республика",
+    "ЦАР",
     "Central African Republic (République centrafricaine)",
     "cf",
     "236"
@@ -410,7 +410,7 @@ var allCountries = [
     ["767"]
   ],
   [
-    "Доминиканская Республика",
+    "Доминикана",
     "Dominican Republic (República Dominicana)",
     "do",
     "1",
@@ -1022,7 +1022,7 @@ var allCountries = [
     "850"
   ],
   [
-    "Северные Марианские острова",
+    "Марианские острова",
     "Northern Mariana Islands",
     "mp",
     "1",
@@ -1185,7 +1185,7 @@ var allCountries = [
     "508"
   ],
   [
-    "Сент-Винсент и Гренадины",
+    "Сент-Винсент",
     "Saint Vincent and the Grenadines",
     "vc",
     "1",
@@ -1441,7 +1441,7 @@ var allCountries = [
     "688"
   ],
   [
-    "Американские Виргинские острова",
+    "Виргинские острова",
     "U.S. Virgin Islands",
     "vi",
     "1",
@@ -1461,7 +1461,7 @@ var allCountries = [
     "380"
   ],
   [
-    "Объединенные Арабские Эмираты",
+    "ОАЭ",
     "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)",
     "ae",
     "971"
@@ -1474,7 +1474,7 @@ var allCountries = [
     0
   ],
   [
-    "Соединенные Штаты Америки",
+    "США",
     "United States",
     "us",
     "1",

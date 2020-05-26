@@ -351,7 +351,7 @@ class Iti {
 
       const codeLabel = this._createEl('label', { class: 'iti__code-label' }, this.flagsContainer);
       setTimeout(() => {
-        codeLabel.innerText = '+' + this.selectedCountryData.dialCode;
+        codeLabel.innerText = this.selectedCountryData.dialCode;
       });
 
       const country = this._createEl('div', { class: 'iti__country' }, this.selectedFlag);
@@ -983,7 +983,7 @@ class Iti {
     countryName.innerText = this.selectedCountryData.russianName;
 
     const codeLabel = document.querySelector('.iti label');
-    codeLabel.innerText = '+' + this.selectedCountryData.dialCode;
+    codeLabel.innerText = this.selectedCountryData.dialCode;
 
 
     if (this.options.separateDialCode) {
